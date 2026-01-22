@@ -11,6 +11,7 @@
 
 ## 목차
 
+  1. [플레이](https://github.com/oneyoung102/2DWorld_Game/blob/main/README.md#%ED%94%8C%EB%A0%88%EC%9D%B4)
   1. [원소](https://github.com/oneyoung102/2DWorld_Game/blob/main/README.md#%EC%9B%90%EC%86%8C)
   2. [몬스터](https://github.com/oneyoung102/2DWorld_Game/blob/main/README.md#%EB%AA%AC%EC%8A%A4%ED%84%B0)
   3. [플레이어](https://github.com/oneyoung102/2DWorld_Game/blob/main/README.md#%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4)
