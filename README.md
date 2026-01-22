@@ -528,7 +528,7 @@
       - **장비 변환**   
         > 장비 변환은 구현돼 있으나, 게임 내 변환 미구현
         ```c++
-        character_weapon = WEAP
+        character_weapon = WEAP;
         ```
         > WEAP 위치에 무기 종류를 입력하세요. **(SWORD, AXE, HAMMER)**   
       
