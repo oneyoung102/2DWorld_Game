@@ -9,6 +9,15 @@
 
 <hr/>
 
+## 목차
+
+  1. [원소](https://github.com/oneyoung102/2DWorld_Game/edit/main/README.md#%EC%9B%90%EC%86%8C)
+  2. [몬스터](https://github.com/oneyoung102/2DWorld_Game/edit/main/README.md#%EB%AA%AC%EC%8A%A4%ED%84%B0)
+  3. [플레이어](https://github.com/oneyoung102/2DWorld_Game/edit/main/README.md#%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4)
+  4. [멥](https://github.com/oneyoung102/2DWorld_Game/edit/main/README.md#%EB%A9%A5)
+
+<hr/>
+
 ## 플레이
 
 > **2DWorld.cpp**가 메인파일입니다. 다른 파일과 함께 같은 프로젝트에 넣고, 실행시켜 터미널에서 플레이하세요.
@@ -61,8 +70,8 @@
 <hr/>
 
 ## 몬스터
-  > 모든 몬스터는 특성과 약점, 강점을 갖습니다.
-  > 또한 처치 시 아이템과 `XP`, 멜즈를 얻을 수 있습니다.
+  > 모든 몬스터는 특성과 약점, 강점을 갖습니다.   
+  > 또한 처치 시 아이템과 `XP`, 멜즈를 얻을 수 있습니다.   
   > 멜즈의 경우 플레이어 레벨(곱연산)만큼 수량이 증가합니다.   
 
   - #### 레벨
@@ -589,7 +598,7 @@
     - 상자   
       상자는 `☏`로 표시됩니다.    
       플레이어 레벨의 `2500%`~`7400%`만큼의 **멜즈**를 떨어뜨립니다.   
-      체력 포션 하나를 떨어뜨립니다.
+      체력 포션 하나를 떨어뜨립니다.   
     - 마그마   
       `v`로 표시되며 이 위에선 `10`시간마다 `3` 화염 피해를 받으며, 화염 축적량이 감소하지 않습니다.   
     - 물웅덩이   
