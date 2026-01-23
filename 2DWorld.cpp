@@ -1635,7 +1635,7 @@ void monster_caculate(){
 					}
 					if(map_monster_state[ELECITY][mapj][mapi]>=100){
 						map_monster_stateTick[ELECITY_TICK][mapj][mapi]+=1;
-						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=400*map_monster_shield[ELECITY][mapj][mapi]){
+						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=300*map_monster_shield[ELECITY][mapj][mapi]){
 							map_monster_stateTick[ELECITY_TICK][mapj][mapi]=0;
 							map_monster_state[ELECITY][mapj][mapi]=0;
 					}
@@ -3811,6 +3811,7 @@ map_monster_setting();
 		}
 	}//////전체 while문 		
 }
+
 
 
 
