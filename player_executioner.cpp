@@ -338,7 +338,7 @@ void player_state(){
 			character_health-=character_maxHealth*0.15*character_shield[POISON];
 		poison_tick+=1;
 		if(poison_tick%80==4){
-			character_health-=1*pow_num*character_shield[POISON];
+			character_health-=pow_num*character_shield[POISON];
 			character_hit=DETECT;
 		}				
 		else if(poison_tick>=400){
@@ -367,8 +367,8 @@ void player_state(){
 	}
 	if(character_state[ICE]>=100){
 		ice_tick+=1;
-		ice_state=0.5/character_shield[ICE];
-		if(ice_tick>=500/character_shield[ICE]){
+		ice_state=0.5*character_shield[ICE];
+		if(ice_tick>=500*character_shield[ICE]){
 			ice_tick=0;
 			character_state[ICE]=0;
 			ice_state=1;
@@ -376,18 +376,19 @@ void player_state(){
 	}
 	if(character_state[ELECITY]>=100){
 		elecity_tick+=1;
-		if(elecity_tick>=300/character_shield[ELECITY]){
+		if(elecity_tick>=300*character_shield[ELECITY]){
 			elecity_tick=0;
 			character_state[ELECITY]=0;
 		}
 	}
 	if(character_state[GHOST]>=100){
 		ghost_tick+=1;
-		ghost_state=1.3/character_shield[GHOST];
-		if(ghost_tick>=500/character_shield[GHOST]){
+		ghost_state=1.3*character_shield[GHOST];
+		if(ghost_tick>=500*character_shield[GHOST]){
 			ghost_tick=0;
 			character_state[GHOST]=0;
 			ghost_state=1;
 		}
 	}
 }
+
