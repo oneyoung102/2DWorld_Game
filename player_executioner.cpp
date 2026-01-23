@@ -18,7 +18,7 @@ int rush_tick=0;
 int jump_block=0;
 int jump_tick=0;
 int attack_tick;
-int attacked[MAPY][MAPX];////ÇÃ·¹ÀÌ¾î°¡ °ø°İÇÒ ¶§ Áßº¹ Å¸°İ ¹æÁö  
+int attacked[MAPY][MAPX];////í”Œë ˆì´ì–´ê°€ ê³µê²©í•  ë•Œ ì¤‘ë³µ íƒ€ê²© ë°©ì§€  
 
 extern int character_heal_potion,character_heal_potion_amount,heal_potion_tick;
 extern int weapon_damage[6][3],weapon_speed[3],character_weapon,weapon_statedamage[6][3];
@@ -38,7 +38,7 @@ extern int manu_display;
 
 
 void player_potion(){
-	/////////////////////////////////////////////////// Ã¼·Â Æ÷¼Ç 
+	/////////////////////////////////////////////////// ì²´ë ¥ í¬ì…˜ 
 	if(character_heal_potion==DETECT&&character_heal_potion_amount>0){
 		heal_potion_tick+=1;
 		if(heal_potion_tick%15==0){
@@ -54,7 +54,7 @@ void player_potion(){
 	}
 }
 void player_rush(){
-	/////////////////////////////////////////////////// ÇÇÇÏ±â 		
+	/////////////////////////////////////////////////// í”¼í•˜ê¸° 		
 	if(character_rush==DETECT&&character_rush_time<=0&&tick%2==0){
 		if(rush_tick<=10){
 			if(character_direction==LEFT&&character_posx>0&&(map_main[map_type][character_posy][character_posx-1]>=SLIME||map_main[map_type][character_posy][character_posx-1]==0)&&(map_main[map_type][character_posy-1][character_posx-1]>=SLIME||map_main[map_type][character_posy-1][character_posx-1]==0)){
@@ -96,7 +96,7 @@ void player_jump(){
 		jump_tick=0;
 		jump_block=0;
 	}
-	else if(character_jump==UNDETECT&&(map_main[map_type][character_posy+1][character_posx]==0||map_main[map_type][character_posy+1][character_posx]>=SLIME)&&(map_main[map_type][character_posy+1][character_posx+1]==0||map_main[map_type][character_posy+1][character_posx+1]>=SLIME)){///////////ÇÏ°­  
+	else if(character_jump==UNDETECT&&(map_main[map_type][character_posy+1][character_posx]==0||map_main[map_type][character_posy+1][character_posx]>=SLIME)&&(map_main[map_type][character_posy+1][character_posx+1]==0||map_main[map_type][character_posy+1][character_posx+1]>=SLIME)){///////////í•˜ê°•  
 		jump_tick+=1;		
 		if(jump_tick>=7-jump_block*0.6){
 			character_posy+=1;
@@ -107,9 +107,9 @@ void player_jump(){
 } 
 void player_model(){
 	int i,j,k;
-	//////////////////////////////////////////////////ÇÃ·¹ÀÌ¾î µğ½ºÇÃ·¡ÀÌ  
+	//////////////////////////////////////////////////í”Œë ˆì´ì–´ ë””ìŠ¤í”Œë˜ì´  
 	if(character_hit==UNDETECT&&tick%2==0){
-		///////////////////////////////////////////////////´Ù¸® ¿òÁ÷ÀÓ 	
+		///////////////////////////////////////////////////ë‹¤ë¦¬ ì›€ì§ì„ 	
 		if(character_moving==UNDETECT){
 			if(character_posx<MAPX-manu_display)
 				Write(character_posx+DISPLAY_POSX,character_posy+DISPLAY_POSY,WHITE,BLACK,"]");
@@ -124,7 +124,7 @@ void player_model(){
 				Write(character_posx+1+DISPLAY_POSX,character_posy+DISPLAY_POSY,WHITE,BLACK,"]");
 				character_moving=UNDETECT;		
 		}
-		//////////////////////////////////////////////////¸Ó¸® ¿òÁ÷ÀÓ  
+		//////////////////////////////////////////////////ë¨¸ë¦¬ ì›€ì§ì„  
 		if(character_direction==RIGHT){
 			if(character_posx<MAPX-manu_display)
 				Write(character_posx+DISPLAY_POSX,character_posy-1+DISPLAY_POSY,BLACK,WHITE,"^");
@@ -150,7 +150,7 @@ void player_model(){
 		character_hit=UNDETECT;
 	}
 }
-//////////////////////////////////ÇÃ·¹ÀÌ¾î °ø°İ 
+//////////////////////////////////í”Œë ˆì´ì–´ ê³µê²© 
 void character_attacking(int x,int y){
 	int k;
 	if(map_monster_size[SIZE][character_posy+y][character_posx+x]!=MONSTER){
@@ -182,7 +182,7 @@ void character_attacking(int x,int y){
 void player_attacking(){		
 	int i,j,k;	
 	int axe_count;
-			///////////////////////////////////////////////////°ø°İ ¹æ½Ä 		
+			///////////////////////////////////////////////////ê³µê²© ë°©ì‹ 		
 	if(character_attack==DETECT){
 		if(character_direction==LEFT){
 			if(character_weapon==SWORD){
@@ -308,7 +308,7 @@ void player_attacking(){
 ////////////////////////////////////////////
 void player_state(){
 	int i,j,k;
-	//////////////////////////////////¹Ù´Ú »óÅÂÀÌ»ó 
+	//////////////////////////////////ë°”ë‹¥ ìƒíƒœì´ìƒ 
 	double pow_num=pow(1.095,character_level-1);
 	if(map_main[map_type][character_posy+1][character_posx]==MAGMA_BLOCK&&tick%10==0){
 		character_state[FIRE]+=1;
@@ -320,7 +320,7 @@ void player_state(){
 	else if(map_main[map_type][character_posy+1][character_posx]==WATER&&character_state[ELECITY]>=100-50*character_shield[ELECITY])
 		character_state[ELECITY]=100;	
 	
-	///////////////////////////////////////////////////////////////////////////////¿ø¼Ò ÃàÃ´ 
+	///////////////////////////////////////////////////////////////////////////////ì›ì†Œ ì¶•ì²™ 
 	if(tick%10==0){
 		for(i=POISON;i<=GHOST;i++){
 			if(character_state[i]<100&&character_state[i]>0)
@@ -337,11 +337,11 @@ void player_state(){
 		if(poison_tick==0)
 			character_health-=character_maxHealth*0.15*character_shield[POISON];
 		poison_tick+=1;
-		if(poison_tick%8==4){
+		if(poison_tick%80==4){
 			character_health-=3*pow_num*character_shield[POISON];
 			character_hit=DETECT;
 		}				
-		else if(poison_tick>=40){
+		else if(poison_tick>=400){
 			poison_tick=0;
 			character_state[POISON]=0;
 			character_health+=character_maxHealth*0.1*character_shield[POISON];
@@ -353,11 +353,11 @@ void player_state(){
 	}
 	if(character_state[FIRE]>=100){
 		fire_tick+=1;
-		if(fire_tick%7==4){
+		if(fire_tick%62==4){
 			character_health-=3.6*pow_num1*character_shield[FIRE];
 			character_hit=DETECT;
 		}				
-		else if(fire_tick>=50){
+		else if(fire_tick>=500){
 			fire_tick=0;
 			character_state[FIRE]=0;
 			character_health-=15*pow_num*character_shield[FIRE];
@@ -368,7 +368,7 @@ void player_state(){
 	if(character_state[ICE]>=100){
 		ice_tick+=1;
 		ice_state=0.5/character_shield[ICE];
-		if(ice_tick>=80/character_shield[ICE]){
+		if(ice_tick>=500/character_shield[ICE]){
 			ice_tick=0;
 			character_state[ICE]=0;
 			ice_state=1;
@@ -376,7 +376,7 @@ void player_state(){
 	}
 	if(character_state[ELECITY]>=100){
 		elecity_tick+=1;
-		if(elecity_tick>=40*character_shield[ELECITY]){
+		if(elecity_tick>=300/character_shield[ELECITY]){
 			elecity_tick=0;
 			character_state[ELECITY]=0;
 		}
@@ -384,7 +384,7 @@ void player_state(){
 	if(character_state[GHOST]>=100){
 		ghost_tick+=1;
 		ghost_state=1.3/character_shield[GHOST];
-		if(ghost_tick>=80/character_shield[GHOST]){
+		if(ghost_tick>=500/character_shield[GHOST]){
 			ghost_tick=0;
 			character_state[GHOST]=0;
 			ghost_state=1;
