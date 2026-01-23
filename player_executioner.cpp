@@ -338,7 +338,7 @@ void player_state(){
 			character_health-=character_maxHealth*0.15*character_shield[POISON];
 		poison_tick+=1;
 		if(poison_tick%80==4){
-			character_health-=3*pow_num*character_shield[POISON];
+			character_health-=1*pow_num*character_shield[POISON];
 			character_hit=DETECT;
 		}				
 		else if(poison_tick>=400){
@@ -354,7 +354,7 @@ void player_state(){
 	if(character_state[FIRE]>=100){
 		fire_tick+=1;
 		if(fire_tick%62==4){
-			character_health-=3.6*pow_num1*character_shield[FIRE];
+			character_health-=1.2*pow_num1*character_shield[FIRE];
 			character_hit=DETECT;
 		}				
 		else if(fire_tick>=500){
