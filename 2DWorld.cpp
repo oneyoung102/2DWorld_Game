@@ -1613,7 +1613,7 @@ void monster_caculate(){
 					if(map_monster_state[FIRE][mapj][mapi]>=100){
 						map_monster_stateTick[FIRE_TICK][mapj][mapi]+=1;
 						if(map_monster_stateTick[FIRE_TICK][mapj][mapi]%62==4){
-						map_monster_health[mapj][mapi]-=2.4*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
+						map_monster_health[mapj][mapi]-=1.2*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
 						map_monster_hit[mapj][mapi]=DETECT;
 						}				
 						else if(map_monster_stateTick[FIRE_TICK][mapj][mapi]>=500){
@@ -1626,8 +1626,8 @@ void monster_caculate(){
 					}
 					if(map_monster_state[ICE][mapj][mapi]>=100){
 						map_monster_stateTick[ICE_TICK][mapj][mapi]+=1;
-						map_monster_stateState[ICE_STATE][mapj][mapi]=0.5/map_monster_shield[ICE][mapj][mapi];
-						if(map_monster_stateTick[ICE_TICK][mapj][mapi]>=500/map_monster_shield[ICE][mapj][mapi]){
+						map_monster_stateState[ICE_STATE][mapj][mapi]=0.5*map_monster_shield[ICE][mapj][mapi];
+						if(map_monster_stateTick[ICE_TICK][mapj][mapi]>=500*map_monster_shield[ICE][mapj][mapi]){
 							map_monster_stateTick[ICE_TICK][mapj][mapi]=0;
 							map_monster_state[ICE][mapj][mapi]=0;
 							map_monster_stateState[ICE_STATE][mapj][mapi]=1;
@@ -1635,15 +1635,15 @@ void monster_caculate(){
 					}
 					if(map_monster_state[ELECITY][mapj][mapi]>=100){
 						map_monster_stateTick[ELECITY_TICK][mapj][mapi]+=1;
-						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=400/map_monster_shield[ELECITY][mapj][mapi]){
+						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=400*map_monster_shield[ELECITY][mapj][mapi]){
 							map_monster_stateTick[ELECITY_TICK][mapj][mapi]=0;
 							map_monster_state[ELECITY][mapj][mapi]=0;
 					}
 					}
 					if(map_monster_state[GHOST][mapj][mapi]>=100){
 						map_monster_stateTick[GHOST_TICK][mapj][mapi]+=1;
-						map_monster_stateState[GHOST_STATE][mapj][mapi]=1.25/map_monster_shield[GHOST][mapj][mapi];
-						if(map_monster_stateTick[GHOST_TICK][mapj][mapi]>=500/map_monster_shield[GHOST][mapj][mapi]){
+						map_monster_stateState[GHOST_STATE][mapj][mapi]=1.3*map_monster_shield[GHOST][mapj][mapi];
+						if(map_monster_stateTick[GHOST_TICK][mapj][mapi]>=500*map_monster_shield[GHOST][mapj][mapi]){
 							map_monster_stateTick[GHOST_TICK][mapj][mapi]=0;
 							map_monster_state[GHOST][mapj][mapi]=0;
 							map_monster_stateState[GHOST_STATE][mapj][mapi]=1;
@@ -3811,5 +3811,6 @@ map_monster_setting();
 		}
 	}//////전체 while문 		
 }
+
 
 
