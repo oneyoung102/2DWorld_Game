@@ -20,7 +20,7 @@ double pow_num,pow_num1;
 
 
 int mapi,mapj,map_type=0;
-string map_name[MAP_AMOUNT]={"È°È­»ê","¶ß°Å¿î È­¼º¾Ï","¿ë¾Ï Áö´ë","°ÇÁ¶ÇÑ ¸¶À»","Çö¹«¾Ï µ¿±¼","²öÀû°Å¸®´Â µ¿±¼","²öÀû°Å¸®´Â ½£","½½¶óÀÓ ½£","½ÀÇÑ ´ëÇÇ¼Ò","½½¶óÀÓ ½£","²öÀû°Å¸®´Â ½£","²öÀû°Å¸®´Â Æò¿ø","Æò¿ø","°Å¹Ì µ¿±¼","ÀÚ°¥±æ ³»¸®¸·","°í¸³Áö","¿õµ¢ÀÌ ½ÀÁö","¼±¼±ÇÑ Æò¿ø","¾ó¾îºÙÀº µ¿±¼","´« µ¤ÀÎ ±æ","¼³»ê"};
+string map_name[MAP_AMOUNT]={"í™œí™”ì‚°","ëœ¨ê±°ìš´ í™”ì„±ì•”","ìš©ì•” ì§€ëŒ€","ê±´ì¡°í•œ ë§ˆì„","í˜„ë¬´ì•” ë™êµ´","ëˆì ê±°ë¦¬ëŠ” ë™êµ´","ëˆì ê±°ë¦¬ëŠ” ìˆ²","ìŠ¬ë¼ì„ ìˆ²","ìŠµí•œ ëŒ€í”¼ì†Œ","ìŠ¬ë¼ì„ ìˆ²","ëˆì ê±°ë¦¬ëŠ” ìˆ²","ëˆì ê±°ë¦¬ëŠ” í‰ì›","í‰ì›","ê±°ë¯¸ ë™êµ´","ìê°ˆê¸¸ ë‚´ë¦¬ë§‰","ê³ ë¦½ì§€","ì›…ë©ì´ ìŠµì§€","ì„ ì„ í•œ í‰ì›","ì–¼ì–´ë¶™ì€ ë™êµ´","ëˆˆ ë®ì¸ ê¸¸","ì„¤ì‚°"};
 int map_main[MAP_AMOUNT][MAPY][MAPX]={
 {
 {1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -487,10 +487,10 @@ int map_main[MAP_AMOUNT][MAPY][MAPX]={
 };
 
 
-/////////////////////////////////// Æ½ 
+/////////////////////////////////// í‹± 
 int tick,heal_potion_tick;
 
-////////////////////////////////////////¸ã »óÀÇ ÄÉ¸¯ÅÍ Á¤º¸ 
+////////////////////////////////////////ë©¥ ìƒì˜ ì¼€ë¦­í„° ì •ë³´ 
 int character_posx,character_posy;
 
 int character_direction=LEFT;
@@ -523,10 +523,10 @@ int fire_level,fire_tick=0,ice_tick=0,ghost_tick=0,elecity_tick=0;
 double ice_state=1,ghost_state=1;
 int character_state[6];
 
-int weapon_statedamage[6][3];////¹°¸® µ¥¹ÌÁö´Â Àû¿ë X 
+int weapon_statedamage[6][3];////ë¬¼ë¦¬ ë°ë¯¸ì§€ëŠ” ì ìš© X 
 
 int item[100],inven_item[100];
-string item_name[100]={"¸áÁî","µ¶¼º ¾×Ã¼","¸¶±×¸¶","¾óÀ½ °áÁ¤","ÀüÀÚ±â¼®","¿µÈ¥¼®","½½¶óÀÓ ¾×Ã¼","ºû³ª´Â ¾Ï¼®","Å©¸®ÃÄ °¡Á×","ÈÖ¹ß °¡½º","Èæ¿ä¼®","±İ¼Ó ÇÕÆÇ","¼öÁ¤","ÆÄÀÌÁ® ¸Ó¸®","ÇÃ·Î¼Ç ÁÖ¸Ó´Ï","·¯¼ÅÀÇ ¹ß","¿©ÇàÀÚ ÆÑ"};
+string item_name[100]={"ë©œì¦ˆ","ë…ì„± ì•¡ì²´","ë§ˆê·¸ë§ˆ","ì–¼ìŒ ê²°ì •","ì „ìê¸°ì„","ì˜í˜¼ì„","ìŠ¬ë¼ì„ ì•¡ì²´","ë¹›ë‚˜ëŠ” ì•”ì„","í¬ë¦¬ì³ ê°€ì£½","íœ˜ë°œ ê°€ìŠ¤","í‘ìš”ì„","ê¸ˆì† í•©íŒ","ìˆ˜ì •","íŒŒì´ì ¸ ë¨¸ë¦¬","í”Œë¡œì…˜ ì£¼ë¨¸ë‹ˆ","ëŸ¬ì…”ì˜ ë°œ","ì—¬í–‰ì íŒ©"};
 int item_class[100]={YELLOW,WHITE,WHITE,WHITE,WHITE,WHITE,CYAN,CYAN,CYAN,LIGHTMAGENTA,LIGHTMAGENTA,LIGHTMAGENTA,BROWN,BROWN,BROWN,BROWN,WHITE};
 
 int character_manu=UNDETECT;
@@ -543,7 +543,7 @@ int poison_level,poison_tick=0;
 
 
 
-/////////////////////////////////////////////////////¸ã »óÀÇ ¸ó½ºÅÍ Á¤º¸ 
+/////////////////////////////////////////////////////ë©¥ ìƒì˜ ëª¬ìŠ¤í„° ì •ë³´ 
 
 int monster_move_true, monster_move_direction;
 int map_monster_direction[MAPY][MAPX];
@@ -553,8 +553,8 @@ int map_monster_state[6][MAPY][MAPX];
 
 int map_monster_stateTick[6][MAPY][MAPX];
 double map_monster_stateState[2][MAPY][MAPX];
-/////////////////////////////////////////////////°ø°İ ¹æ¾î °è»ê º¯¼ö  
-int map_monster_statePower[6][MAPY][MAPX];////¹°¸® µ¥¹ÌÁö´Â Àû¿ë X 
+/////////////////////////////////////////////////ê³µê²© ë°©ì–´ ê³„ì‚° ë³€ìˆ˜  
+int map_monster_statePower[6][MAPY][MAPX];////ë¬¼ë¦¬ ë°ë¯¸ì§€ëŠ” ì ìš© X 
 int map_monster_hit[MAPY][MAPX];
 int map_monster_sense[MAPY][MAPX];
 int map_monster_power[6][MAPY][MAPX];
@@ -562,7 +562,7 @@ double map_monster_shield[6][MAPY][MAPX];
 int map_monster_level[MAPY][MAPX];
 int map_monster_downsign[MAPY][MAPX];
 
-int map_monster_size[3][MAPY][MAPX];//////////////attribute move¿¡ Æ÷ÇÔ ¾ÈµÊ  
+int map_monster_size[3][MAPY][MAPX];//////////////attribute moveì— í¬í•¨ ì•ˆë¨  
 int monster_movex,monster_movey;
 int monster_move_pro;
 
@@ -570,7 +570,7 @@ int monster_move_pro;
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////¸ã Ã³¸® 
+////////////////////////////////////////////////////////////////////ë©¥ ì²˜ë¦¬ 
 void attribute_move(int x, int y){
 	map_main[map_type][mapj+y][mapi+x]=map_main[map_type][mapj][mapi];
 	map_main[map_type][mapj][mapi]=0;	
@@ -609,7 +609,7 @@ void attribute_move(int x, int y){
 	monster_movex=x;
 	monster_movey=y;
 }
-//////////////////////////////////////////////////¸ã Å¬¸®¾î 
+//////////////////////////////////////////////////ë©¥ í´ë¦¬ì–´ 
 void map_clear(){
 	for(mapj=0;mapj<=MAPY-1;mapj++){
 		for(mapi=0;mapi<=MAPX-1;mapi++){
@@ -643,7 +643,7 @@ void map_clear(){
 	}
 	for(mapj=0;mapj<=MAPY-1;mapj++){
 			for(mapi=0;mapi<=MAPX-1;mapi++){
-				////////////////////////////////////¹è°æ Ã³¸® 
+				////////////////////////////////////ë°°ê²½ ì²˜ë¦¬ 
 				if((map_main[map_type][mapj][mapi]==0||map_main[map_type][mapj][mapi]>=SLIME)&&map_monster_size[SIZE][mapj][mapi]==0)
 					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,BLACK," ");
 				else if(map_main[map_type][mapj][mapi]==BLOCK)
@@ -651,7 +651,7 @@ void map_clear(){
 		}
 	}
 } 
-//////////////////////////////////////////////////Àü¸®Ç° È¹µæ 
+//////////////////////////////////////////////////ì „ë¦¬í’ˆ íšë“ 
 void item_getting(int type){
 	int random = rand()%100;
 	if(type==CHEST) {
@@ -956,7 +956,7 @@ void xp_getting(int type){
 		
 	}
 }/////////////
-//////////////////////////////////////////////////¸ó½ºÅÍ ¼ÒÈ¯ 
+//////////////////////////////////////////////////ëª¬ìŠ¤í„° ì†Œí™˜ 
 void summon_monster(int monster, int percent){
 	for(mapj=1;mapj<=MAPY-2;mapj++){
 		for(mapi=10;mapi<=MAPX-11;mapi++){
@@ -1539,8 +1539,8 @@ void map_monster_setting(){
 		map_clear();
 	}
 }
-////////////////////////////////////////////////////////////////¸ó½ºÅÍ Ã³¸®
-///////////////////////////////////¸ó½ºÅÍ °ø°İ 
+////////////////////////////////////////////////////////////////ëª¬ìŠ¤í„° ì²˜ë¦¬
+///////////////////////////////////ëª¬ìŠ¤í„° ê³µê²© 
 void monster_attacking(int x,int y){
 	
 	if(map_monster_direction[mapj][mapi]==LEFT){
@@ -1584,7 +1584,7 @@ void monster_caculate(){
 		for(mapi=0;mapi<=MAPX-1;mapi++){
 			int i,j,k,p;
 			if(map_main[map_type][mapj][mapi]>=SLIME&&map_main[map_type][mapj][mapi]<1000){
-					///////////////////////////////¿ø¼Ò ÃàÀû  
+					///////////////////////////////ì›ì†Œ ì¶•ì   
 					if(tick%5==0){
 						for(i=POISON;i<=GHOST;i++){
 							if(map_monster_state[i][mapj][mapi]<100&&map_monster_state[i][mapj][mapi]>0)
@@ -1597,11 +1597,11 @@ void monster_caculate(){
 						if(map_monster_stateTick[POISON_TICK][mapj][mapi]==0)
 							map_monster_health[mapj][mapi]-=map_monster_Maxhealth[mapj][mapi]*0.15*map_monster_shield[POISON][mapj][mapi];
 							map_monster_stateTick[POISON_TICK][mapj][mapi]+=1;
-						if(map_monster_stateTick[POISON_TICK][mapj][mapi]%8==4){
+						if(map_monster_stateTick[POISON_TICK][mapj][mapi]%80==4){
 							map_monster_health[mapj][mapi]-=weapon_damage[POISON][character_weapon]*map_monster_shield[POISON][mapj][mapi];
 							map_monster_hit[mapj][mapi]=DETECT;
 						}				
-						else if(map_monster_stateTick[POISON_TICK][mapj][mapi]>=40){
+						else if(map_monster_stateTick[POISON_TICK][mapj][mapi]>=400){
 							map_monster_stateTick[POISON_TICK][mapj][mapi]=0;
 							map_monster_state[POISON][mapj][mapi]=0;
 							map_monster_health[mapj][mapi]+=map_monster_Maxhealth[mapj][mapi]*0.1*map_monster_shield[POISON][mapj][mapi];
@@ -1612,11 +1612,11 @@ void monster_caculate(){
 					}
 					if(map_monster_state[FIRE][mapj][mapi]>=100){
 						map_monster_stateTick[FIRE_TICK][mapj][mapi]+=1;
-						if(map_monster_stateTick[FIRE_TICK][mapj][mapi]%7==4){
+						if(map_monster_stateTick[FIRE_TICK][mapj][mapi]%62==4){
 						map_monster_health[mapj][mapi]-=1.2*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
 						map_monster_hit[mapj][mapi]=DETECT;
 						}				
-						else if(map_monster_stateTick[FIRE_TICK][mapj][mapi]>=50){
+						else if(map_monster_stateTick[FIRE_TICK][mapj][mapi]>=500){
 							map_monster_stateTick[FIRE_TICK][mapj][mapi]=0;
 							map_monster_state[FIRE][mapj][mapi]=0;
 							map_monster_health[mapj][mapi]-=15*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
@@ -1627,7 +1627,7 @@ void monster_caculate(){
 					if(map_monster_state[ICE][mapj][mapi]>=100){
 						map_monster_stateTick[ICE_TICK][mapj][mapi]+=1;
 						map_monster_stateState[ICE_STATE][mapj][mapi]=0.5/map_monster_shield[ICE][mapj][mapi];
-						if(map_monster_stateTick[ICE_TICK][mapj][mapi]>=50/map_monster_shield[ICE][mapj][mapi]){
+						if(map_monster_stateTick[ICE_TICK][mapj][mapi]>=500/map_monster_shield[ICE][mapj][mapi]){
 							map_monster_stateTick[ICE_TICK][mapj][mapi]=0;
 							map_monster_state[ICE][mapj][mapi]=0;
 							map_monster_stateState[ICE_STATE][mapj][mapi]=1;
@@ -1635,7 +1635,7 @@ void monster_caculate(){
 					}
 					if(map_monster_state[ELECITY][mapj][mapi]>=100){
 						map_monster_stateTick[ELECITY_TICK][mapj][mapi]+=1;
-						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=50/map_monster_shield[ELECITY][mapj][mapi]){
+						if(map_monster_stateTick[ELECITY_TICK][mapj][mapi]>=400/map_monster_shield[ELECITY][mapj][mapi]){
 							map_monster_stateTick[ELECITY_TICK][mapj][mapi]=0;
 							map_monster_state[ELECITY][mapj][mapi]=0;
 					}
@@ -1643,22 +1643,22 @@ void monster_caculate(){
 					if(map_monster_state[GHOST][mapj][mapi]>=100){
 						map_monster_stateTick[GHOST_TICK][mapj][mapi]+=1;
 						map_monster_stateState[GHOST_STATE][mapj][mapi]=1.25/map_monster_shield[GHOST][mapj][mapi];
-						if(map_monster_stateTick[GHOST_TICK][mapj][mapi]>=50/map_monster_shield[GHOST][mapj][mapi]){
+						if(map_monster_stateTick[GHOST_TICK][mapj][mapi]>=500/map_monster_shield[GHOST][mapj][mapi]){
 							map_monster_stateTick[GHOST_TICK][mapj][mapi]=0;
 							map_monster_state[GHOST][mapj][mapi]=0;
 							map_monster_stateState[GHOST_STATE][mapj][mapi]=1;
 						}
 					}
 				
-////////////////////////////////////////////////////½½¶óÀÓ ·ù 	
+////////////////////////////////////////////////////ìŠ¬ë¼ì„ ë¥˜ 	
 				if(map_main[map_type][mapj][mapi]>=SLIME&&map_main[map_type][mapj][mapi]<=STONE_SLIME){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					for(i=0;i<=1;i++){
 						map_monster_size[SIZE][mapj][mapi+i]=REMOVE_SIGN;
 						map_monster_size[POSX][mapj][mapi+i]=0;
 						map_monster_size[POSY][mapj][mapi+i]=0;
 					}
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -1676,7 +1676,7 @@ void monster_caculate(){
 					
 						if((monster_move_true%550<=22&&map_monster_hit[mapj][mapi]==UNDETECT&&map_main[map_type][mapj][mapi]<STONE_SLIME)||(monster_move_true%550<=15&&map_monster_hit[mapj][mapi]==UNDETECT&&map_main[map_type][mapj][mapi]==STONE_SLIME&&map_monster_sense[mapj][mapi]>0)){
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -1703,7 +1703,7 @@ void monster_caculate(){
 										attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-3&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -1721,17 +1721,17 @@ void monster_caculate(){
 										attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(monster_move_true%550<=29&&monster_move_true%550>=22&&map_monster_sense[mapj][mapi]>0){
 							monster_attacking(2,1);
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}							
@@ -1746,7 +1746,7 @@ void monster_caculate(){
 						}		
 					}					
 				}
-/////////////////////////////////	////////////////°ñ·½·ù 
+/////////////////////////////////	////////////////ê³¨ë ˜ë¥˜ 
 				else if(map_main[map_type][mapj][mapi]>=BASALT_GOLEM&&map_main[map_type][mapj][mapi]<=ELITE_GOLEM){
 					for(i=0;i<=2;i++){
 						for(j=0;j<=2;j++){
@@ -1756,12 +1756,12 @@ void monster_caculate(){
 						}
 					}
 					
-					if(map_main[map_type][mapj][mapi]==IGNEOUS_ROCK_GOLEM){//////È­¼º¾Ï °ñ·¥ 
+					if(map_main[map_type][mapj][mapi]==IGNEOUS_ROCK_GOLEM){//////í™”ì„±ì•” ê³¨ë¨ 
 						if(character_posx<=mapi+8&&character_posx>=mapi-8&&tick%10==0)
 							character_state[FIRE]+=1;
 					}
 					
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -1775,7 +1775,7 @@ void monster_caculate(){
 					if(map_monster_state[ELECITY][mapj][mapi]<100){	
 						if(monster_move_true%550<=15&&map_monster_hit[mapj][mapi]==UNDETECT){
 					
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -1807,17 +1807,17 @@ void monster_caculate(){
 								}	
 							}
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(monster_move_true%550<=23&&monster_move_true%550>=15&&map_monster_sense[mapj][mapi]>0){
 							monster_attacking(4,3);
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_main[map_type][mapj+1][mapi+2]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}				
 					}
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					if(map_monster_health[mapj][mapi]>0){
 						for(i=monster_movex;i<=2+monster_movex;i++){
 							for(j=-monster_movey;j<=2-monster_movey;j++){
@@ -1830,9 +1830,9 @@ void monster_caculate(){
 						}	
 					}
 				}
-///////////////////////////////////////////////////////////////////////ÆÄÀÌÁ® ·ù 	
+///////////////////////////////////////////////////////////////////////íŒŒì´ì ¸ ë¥˜ 	
 				if(map_main[map_type][mapj][mapi]>=FIZER&&map_main[map_type][mapj][mapi]<=MACHANIC_FIZER){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					for(i=0;i<=2;i++){
 						for(j=0;j<=1;j++){
 							map_monster_size[SIZE][mapj-j][mapi+i]=REMOVE_SIGN;
@@ -1840,7 +1840,7 @@ void monster_caculate(){
 							map_monster_size[POSY][mapj-j][mapi+i]=0;
 						}
 					}
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -1856,7 +1856,7 @@ void monster_caculate(){
 					
 						if(monster_move_true%550<=26&&map_monster_hit[mapj][mapi]==UNDETECT&&map_main[map_type][mapj][mapi]){
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if((character_posx>=mapi-30&&character_posx<=mapi-10)||(character_posx>=mapi&&character_posx<mapi+10))
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -1886,7 +1886,7 @@ void monster_caculate(){
 											attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-4&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -1907,12 +1907,12 @@ void monster_caculate(){
 											attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(character_posx>=mapi-2&&character_posx<mapi+2&&monster_move_true%550<=35&&monster_move_true%550>=26&&map_monster_sense[mapj][mapi]>0){
 							pow_num=pow(1.095,map_monster_level[mapj][mapi]-1);	
 							if(map_main[map_type][mapj][mapi]==FIZER){
@@ -1968,7 +1968,7 @@ void monster_caculate(){
 							}				
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_main[map_type][mapj+1][mapi+2]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}							
@@ -1985,9 +1985,9 @@ void monster_caculate(){
 						}	
 					}			
 				}
-///////////////////////////////////////////////////////////////////////º£ÀÎ ·ù 	
+///////////////////////////////////////////////////////////////////////ë² ì¸ ë¥˜ 	
 				if(map_main[map_type][mapj][mapi]>=VAIN&&map_main[map_type][mapj][mapi]<=ELITE_VAIN){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					for(i=0;i<=2;i++){
 						for(j=0;j<=0;j++){
 							map_monster_size[SIZE][mapj-j][mapi+i]=REMOVE_SIGN;
@@ -2002,7 +2002,7 @@ void monster_caculate(){
 					}
 						
 					
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -2018,7 +2018,7 @@ void monster_caculate(){
 					
 						if(monster_move_true%550<=19&&map_monster_hit[mapj][mapi]==UNDETECT&&map_main[map_type][mapj][mapi]){
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -2045,7 +2045,7 @@ void monster_caculate(){
 										attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-4&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -2063,12 +2063,12 @@ void monster_caculate(){
 										attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(character_posx>=mapi-2&&character_posx<mapi+2&&monster_move_true%550<=26&&monster_move_true%550>=19&&map_monster_sense[mapj][mapi]>0){
 							pow_num=pow(1.095,map_monster_level[mapj][mapi]-1);	
 							monster_attacking(2,1);
@@ -2076,7 +2076,7 @@ void monster_caculate(){
 								map_monster_health[mapj][mapi]+=40*pow_num;
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_main[map_type][mapj+1][mapi+2]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}							
@@ -2093,14 +2093,14 @@ void monster_caculate(){
 						}	
 					}		
 				}
-///////////////////////////////////////////////////////////////////////°Å¹Ì ·ù 	
+///////////////////////////////////////////////////////////////////////ê±°ë¯¸ ë¥˜ 	
 				if(map_main[map_type][mapj][mapi]>=SPIDER&&map_main[map_type][mapj][mapi]<=QUEEN_SPIDER){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 							map_monster_size[SIZE][mapj][mapi]=REMOVE_SIGN;
 							map_monster_size[POSX][mapj][mapi]=0;
 							map_monster_size[POSY][mapj][mapi]=0;
 							
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -2116,7 +2116,7 @@ void monster_caculate(){
 					
 						if(monster_move_true%550<=27&&map_monster_hit[mapj][mapi]==UNDETECT&&map_main[map_type][mapj][mapi]){
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -2139,7 +2139,7 @@ void monster_caculate(){
 										attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-2&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -2153,12 +2153,12 @@ void monster_caculate(){
 										attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(character_posx>=mapi-2&&character_posx<mapi+2&&monster_move_true%550<=39&&monster_move_true%550>=27&&map_monster_sense[mapj][mapi]>0){
 							monster_attacking(1,1);
 							pow_num=pow(1.095,map_monster_level[mapj][mapi]-1);	
@@ -2166,7 +2166,7 @@ void monster_caculate(){
 								map_monster_health[mapj][mapi]+=10.2*pow_num;
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj][mapi+1]==0&&map_main[map_type][mapj][mapi-1]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}							
@@ -2179,9 +2179,9 @@ void monster_caculate(){
 						}
 					}	
 				}
-////////////////////////////////////////////////////ÇÃ·Î¼Ç ·ù 	
+////////////////////////////////////////////////////í”Œë¡œì…˜ ë¥˜ 	
 				else if(map_main[map_type][mapj][mapi]>=PLOSION&&map_main[map_type][mapj][mapi]<=ELITE_PLOSION){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					for(i=0;i<=1;i++){
 						for(j=0;j<=1;j++){
 							map_monster_size[SIZE][mapj-j][mapi+i]=REMOVE_SIGN;
@@ -2189,7 +2189,7 @@ void monster_caculate(){
 							map_monster_size[POSY][mapj-j][mapi+i]=0;
 						}
 					}
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -2205,7 +2205,7 @@ void monster_caculate(){
 					
 						if(((monster_move_true%550<=24&&map_main[map_type][mapj][mapi]==QUICK_PLOSION)||(monster_move_true%550<=19&&map_main[map_type][mapj][mapi]!=QUICK_PLOSION))&&map_monster_hit[mapj][mapi]==UNDETECT){
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -2235,7 +2235,7 @@ void monster_caculate(){
 											attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-3&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -2256,17 +2256,17 @@ void monster_caculate(){
 											attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if((monster_move_true%550<=33&&monster_move_true%550>=24&&map_main[map_type][mapj][mapi]==QUICK_PLOSION)||(monster_move_true%550<=26&&monster_move_true%550>=19&&map_main[map_type][mapj][mapi]!=QUICK_PLOSION)&&map_monster_sense[mapj][mapi]>0){
 							monster_attacking(2,1);
 						}
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}							
@@ -2291,15 +2291,15 @@ void monster_caculate(){
 							map_main[map_type][mapj][mapi]=1110;
 					}				
 				}
-////////////////////////////////////////////////////////////////////////////////·¯¼Å ·ù 	
+////////////////////////////////////////////////////////////////////////////////ëŸ¬ì…” ë¥˜ 	
 				else if(map_main[map_type][mapj][mapi]>=RUSHER&&map_main[map_type][mapj][mapi]<=ELITE_RUSHER){
-					/////////////Çü»ó 
+					/////////////í˜•ìƒ 
 					for(i=0;i<=1;i++){
 						map_monster_size[SIZE][mapj][mapi+i]=REMOVE_SIGN;
 						map_monster_size[POSX][mapj][mapi+i]=0;
 						map_monster_size[POSY][mapj][mapi+i]=0;
 					}
-					/////////////////////////////////////////////ÀÎ½Ä 	
+					/////////////////////////////////////////////ì¸ì‹ 	
 					if(map_monster_sense[mapj][mapi]>0){
 						map_monster_sense[mapj][mapi]-=1;
 						character_fighting=DETECT;		
@@ -2331,9 +2331,9 @@ void monster_caculate(){
 							
 							
 							if(map_monster_stateTick[RUSHER_MODE][mapj][mapi]>=RUSH)
-								map_monster_downsign[mapj][mapi]=DETECT;///////////·¯½¬ÇÒ ¶§ Áßº¹ ÀÌµ¿ ¹æÁö 
+								map_monster_downsign[mapj][mapi]=DETECT;///////////ëŸ¬ì‰¬í•  ë•Œ ì¤‘ë³µ ì´ë™ ë°©ì§€ 
 							
-							if(map_monster_sense[mapj][mapi]>0){/////////Ãß°İÇÒ ¶§ ¹æÇâ  
+							if(map_monster_sense[mapj][mapi]>0){/////////ì¶”ê²©í•  ë•Œ ë°©í–¥  
 								monster_move_pro=99;
 								if(character_posx<=mapi)
 									map_monster_direction[mapj][mapi]=LEFT;
@@ -2360,7 +2360,7 @@ void monster_caculate(){
 										attribute_move(-1,0);									
 										map_monster_direction[mapj][mapi-1]=LEFT;
 									}			
-									/////////////Çü»ó 															
+									/////////////í˜•ìƒ 															
 								}							
 							}						
 							else if(mapi<=MAPX-3&&((monster_move_direction%100<=monster_move_pro&&map_monster_direction[mapj][mapi]==RIGHT)||(monster_move_direction%100>monster_move_pro&&map_monster_direction[mapj][mapi]==LEFT))){
@@ -2378,17 +2378,17 @@ void monster_caculate(){
 										attribute_move(1,0);
 										map_monster_direction[mapj][mapi+1]=RIGHT;
 									}
-									/////////////Çü»ó 													
+									/////////////í˜•ìƒ 													
 								}	
 							}
 							
 						}	
 						else if(map_main[map_type][mapj+1][mapi]==0&&map_main[map_type][mapj+1][mapi+1]==0&&map_monster_downsign[mapj][mapi]==UNDETECT){
-						/////////////¸ó½ºÅÍ ÇÏ°­ 
+						/////////////ëª¬ìŠ¤í„° í•˜ê°• 
 							map_monster_downsign[mapj][mapi]=DETECT;
 							attribute_move(0,1);
 						}
-						///////////////////////////////////////////////////////////¸ó½º·¯ °ø°İ  
+						///////////////////////////////////////////////////////////ëª¬ìŠ¤ëŸ¬ ê³µê²©  
 						else if(map_monster_sense[mapj][mapi]>0){
 							if(monster_move_true%320<=k+7&&monster_move_true%320>=k){
 								monster_attacking(2,2);
@@ -2405,7 +2405,7 @@ void monster_caculate(){
 						}			
 					}
 				}
-////////////////////////////////////////////¸ó½ºÅÍ»ç¸ÁÃ³¸®  
+////////////////////////////////////////////ëª¬ìŠ¤í„°ì‚¬ë§ì²˜ë¦¬  
 				if(map_monster_health[mapj][mapi]<=0){
 					xp_getting(map_main[map_type][mapj][mapi]);
 					item_getting(map_main[map_type][mapj][mapi]);
@@ -2438,8 +2438,8 @@ void monster_caculate(){
 				}
 				monster_movex=0;
 				monster_movey=0;
-			}/////////////////////////////////////////////////////////À§·Î´Â ¸ó½ºÅÍ ¿òÁ÷ÀÓ 
-////////////////////////////////////////////////////ÇÃ·Î¼Ç °ø°İ 
+			}/////////////////////////////////////////////////////////ìœ„ë¡œëŠ” ëª¬ìŠ¤í„° ì›€ì§ì„ 
+////////////////////////////////////////////////////í”Œë¡œì…˜ ê³µê²© 
 			else if(map_main[map_type][mapj][mapi]>=1001&&map_main[map_type][mapj][mapi]<=1110){
 				if((map_main[map_type][mapj][mapi]>1026&&map_main[map_type][mapj][mapi]<=1040)||(map_main[map_type][mapj][mapi]>1060&&map_main[map_type][mapj][mapi]<=1070)||(map_main[map_type][mapj][mapi]>1095&&map_main[map_type][mapj][mapi]<=1110))
 					k=DARKGRAY;
@@ -2544,18 +2544,18 @@ void monster_caculate(){
 void display_execute(){
 	for(mapj=0;mapj<=MAPY-1;mapj++){
 		for(mapi=0;mapi<=MAPX-1-manu_display;mapi++){
-			////////////////////////////////////¹è°æ Ã³¸® 
+			////////////////////////////////////ë°°ê²½ ì²˜ë¦¬ 
 			if(map_monster_size[SIZE][mapj][mapi]==0){
 				if(map_main[map_type][mapj][mapi]==VOID_BLOCK)
 					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,BLACK," ");	
 				else if(map_main[map_type][mapj][mapi]==CHEST)
-					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,WHITE,BLACK,"¢Î");
+					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,WHITE,BLACK,"â˜");
 				else if(map_main[map_type][mapj][mapi]==MAGMA_BLOCK)
 					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,WHITE,"v");
 				else if(map_main[map_type][mapj][mapi]==WATER)
 					Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,WHITE,"~");	
 			}
-			///////////////°Ë°İ ÃÊ±âÈ­ 
+			///////////////ê²€ê²© ì´ˆê¸°í™” 
 			else if(map_monster_size[SIZE][mapj][mapi]==REMOVE_SIGN){
 				map_monster_size[SIZE][mapj][mapi]=0;	
 				Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,BLACK," ");
@@ -2565,17 +2565,17 @@ void display_execute(){
 				Write(mapi+DISPLAY_POSX,mapj+DISPLAY_POSY,BLACK,BLACK," ");
 			}
 				
-			if(map_monster_downsign[mapj][mapi]==DETECT)///////¸ó½ºÅÍ ÇÏ°­ ½ÅÈ£  
+			if(map_monster_downsign[mapj][mapi]==DETECT)///////ëª¬ìŠ¤í„° í•˜ê°• ì‹ í˜¸  
 				map_monster_downsign[mapj][mapi]=UNDETECT;
 		}
 	}
 }
 void monster_display(){
-	////////////////////////////////////////////////////¸ó½ºÅÍ µğ½ºÇÃ·¡ÀÌ  		
+	////////////////////////////////////////////////////ëª¬ìŠ¤í„° ë””ìŠ¤í”Œë˜ì´  		
 	for(mapj=0;mapj<=MAPY-1;mapj++){
 		for(mapi=0;mapi<=MAPX-1-manu_display;mapi++){	
 				
-			if(map_main[map_type][mapj][mapi]==SLIME){///////////////////////½½¶óÀÓ  
+			if(map_main[map_type][mapj][mapi]==SLIME){///////////////////////ìŠ¬ë¼ì„  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2607,7 +2607,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==POISON_SLIME){///////////////////////µ¶¼º ½½¶óÀÓ 
+			else if(map_main[map_type][mapj][mapi]==POISON_SLIME){///////////////////////ë…ì„± ìŠ¬ë¼ì„ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2639,7 +2639,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==FIRE_SLIME){///////////////////////È­¿° ½½¶óÀÓ 
+			else if(map_main[map_type][mapj][mapi]==FIRE_SLIME){///////////////////////í™”ì—¼ ìŠ¬ë¼ì„ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2671,7 +2671,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==ICE_SLIME){///////////////////////´«²É ½½¶óÀÓ 
+			else if(map_main[map_type][mapj][mapi]==ICE_SLIME){///////////////////////ëˆˆê½ƒ ìŠ¬ë¼ì„ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2703,7 +2703,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==ELECITY_SLIME){///////////////////////°¨Àü ½½¶óÀÓ 
+			else if(map_main[map_type][mapj][mapi]==ELECITY_SLIME){///////////////////////ê°ì „ ìŠ¬ë¼ì„ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2735,7 +2735,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==STONE_SLIME){///////////////////////¹ÙÀ§ ½½¶óÀÓ 
+			else if(map_main[map_type][mapj][mapi]==STONE_SLIME){///////////////////////ë°”ìœ„ ìŠ¬ë¼ì„ 
 				if(map_monster_sense[mapj][mapi]>0){
 					if(map_monster_direction[mapj][mapi]==LEFT){
 						if(map_monster_hit[mapj][mapi]==DETECT){
@@ -2773,7 +2773,7 @@ void monster_display(){
 					Write(mapi+1+DISPLAY_POSX,mapj+DISPLAY_POSY,WHITE,WHITE," ");
 				}								
 			}
-			else if(map_main[map_type][mapj][mapi]==BASALT_GOLEM){///////////////////////Çö¹«¾Ï °ñ·½  
+			else if(map_main[map_type][mapj][mapi]==BASALT_GOLEM){///////////////////////í˜„ë¬´ì•” ê³¨ë ˜  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2861,7 +2861,7 @@ void monster_display(){
 					}		
 				}									
 			}
-			else if(map_main[map_type][mapj][mapi]==IGNEOUS_ROCK_GOLEM){///////////////////////Çö¹«¾Ï °ñ·½  
+			else if(map_main[map_type][mapj][mapi]==IGNEOUS_ROCK_GOLEM){///////////////////////í˜„ë¬´ì•” ê³¨ë ˜  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -2949,7 +2949,7 @@ void monster_display(){
 					}		
 				}									
 			}
-			else if(map_main[map_type][mapj][mapi]==ICE_GOLEM){///////////////////////¾óÀ½ °ñ·½  
+			else if(map_main[map_type][mapj][mapi]==ICE_GOLEM){///////////////////////ì–¼ìŒ ê³¨ë ˜  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3037,7 +3037,7 @@ void monster_display(){
 					}		
 				}									
 			}
-			else if(map_main[map_type][mapj][mapi]==ELITE_GOLEM){///////////////////////Èæ¿ä¼® °ñ·½  
+			else if(map_main[map_type][mapj][mapi]==ELITE_GOLEM){///////////////////////í‘ìš”ì„ ê³¨ë ˜  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3125,7 +3125,7 @@ void monster_display(){
 					}		
 				}
 			}
-			else if(map_main[map_type][mapj][mapi]==MACHANIC_FIZER){///////////////////////¸ÅÄ¿´Ğ ÆÄÀÌÁ®  
+			else if(map_main[map_type][mapj][mapi]==MACHANIC_FIZER){///////////////////////ë§¤ì»¤ë‹‰ íŒŒì´ì ¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3189,7 +3189,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==FIZER){///////////////////////ÆÄÀÌÁ®  
+			else if(map_main[map_type][mapj][mapi]==FIZER){///////////////////////íŒŒì´ì ¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3253,7 +3253,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==VAIN){///////////////////////º£ÀÎ  
+			else if(map_main[map_type][mapj][mapi]==VAIN){///////////////////////ë² ì¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3293,7 +3293,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==ELITE_VAIN){///////////////////////¿¤¸®Æ® º£ÀÎ  
+			else if(map_main[map_type][mapj][mapi]==ELITE_VAIN){///////////////////////ì—˜ë¦¬íŠ¸ ë² ì¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3333,7 +3333,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==SPIDER){///////////////////////°Å¹Ì  
+			else if(map_main[map_type][mapj][mapi]==SPIDER){///////////////////////ê±°ë¯¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3357,7 +3357,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==QUEEN_SPIDER){///////////////////////¿©¿Õ°Å¹Ì  
+			else if(map_main[map_type][mapj][mapi]==QUEEN_SPIDER){///////////////////////ì—¬ì™•ê±°ë¯¸  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3381,7 +3381,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==PLOSION){///////////////////////ÇÃ·Î¼Ç 
+			else if(map_main[map_type][mapj][mapi]==PLOSION){///////////////////////í”Œë¡œì…˜ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3429,7 +3429,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==QUICK_PLOSION){///////////////////////Äü ÇÃ·Î¼Ç 
+			else if(map_main[map_type][mapj][mapi]==QUICK_PLOSION){///////////////////////í€µ í”Œë¡œì…˜ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3477,7 +3477,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==ELITE_PLOSION){///////////////////////Á¤¿¹ ÇÃ·Î¼Ç 
+			else if(map_main[map_type][mapj][mapi]==ELITE_PLOSION){///////////////////////ì •ì˜ˆ í”Œë¡œì…˜ 
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER)
@@ -3525,7 +3525,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==RUSHER){///////////////////////·¯¼Å  
+			else if(map_main[map_type][mapj][mapi]==RUSHER){///////////////////////ëŸ¬ì…”  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER){
@@ -3574,7 +3574,7 @@ void monster_display(){
 					}		
 				}					
 			}
-			else if(map_main[map_type][mapj][mapi]==FROST_RUSHER){///////////////////////ÇÁ·Î½ºÆ® ·¯¼Å  
+			else if(map_main[map_type][mapj][mapi]==FROST_RUSHER){///////////////////////í”„ë¡œìŠ¤íŠ¸ ëŸ¬ì…”  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER){
@@ -3622,7 +3622,7 @@ void monster_display(){
 					}		
 				}						
 			}
-			else if(map_main[map_type][mapj][mapi]==ELITE_RUSHER){///////////////////////Á¤¿¹ ·¯¼Å  
+			else if(map_main[map_type][mapj][mapi]==ELITE_RUSHER){///////////////////////ì •ì˜ˆ ëŸ¬ì…”  
 				if(map_monster_direction[mapj][mapi]==LEFT){
 					if(map_monster_hit[mapj][mapi]==DETECT){
 						if(map_monster_size[SIZE][mapj][mapi]!=PLAYER){
@@ -3692,7 +3692,7 @@ int main() {
 	character_posy=12;
 	character_posx=5;
 	
-	//////////////////////´Ü°Ë 
+	//////////////////////ë‹¨ê²€ 
 	weapon_damage[PHYSIC][SWORD]=44;	
 	weapon_speed[SWORD]=5; 
 	
@@ -3707,7 +3707,7 @@ int main() {
 	weapon_statedamage[ICE][SWORD]=0;
 	weapon_statedamage[ELECITY][SWORD]=0;
 	weapon_statedamage[GHOST][SWORD]=0;	
-	//////////////////////////µµ³¢ 
+	//////////////////////////ë„ë¼ 
 	weapon_damage[PHYSIC][AXE]=61;	
 	weapon_speed[AXE]=14;
 	
@@ -3722,7 +3722,7 @@ int main() {
 	weapon_statedamage[ICE][AXE]=0;
 	weapon_statedamage[ELECITY][AXE]=0;
 	weapon_statedamage[GHOST][AXE]=0;	
-	//////////////////////////¸ÁÄ¡ 
+	//////////////////////////ë§ì¹˜ 
 	weapon_damage[PHYSIC][HAMMER]=105;	
 	weapon_speed[HAMMER]=20;
 	
@@ -3766,11 +3766,11 @@ map_monster_setting();
 	tick=0;
 			
 	if(character_manu==UNDETECT){
-		//////////////////////////////////////////////////////¹è°æ µğ½ºÇÃ·¡ÀÌ  ¹× ¸ó½ºÅÍ ¿òÁ÷ÀÓ
-		monster_caculate(); /////////¸ó½ºÅÍ º° ¿òÁ÷ÀÓ, °ø°İ  
-		display_execute();////////¸ã ¹è°æ, ÇÏ°­ ½ÅÈ£, µî  
-		monster_display();///////¸ó½ºÅÍ ¿ÜÇü 
-		///////////////////////////////////Ä³¸¯ÅÍ Çü»ó
+		//////////////////////////////////////////////////////ë°°ê²½ ë””ìŠ¤í”Œë˜ì´  ë° ëª¬ìŠ¤í„° ì›€ì§ì„
+		monster_caculate(); /////////ëª¬ìŠ¤í„° ë³„ ì›€ì§ì„, ê³µê²©  
+		display_execute();////////ë©¥ ë°°ê²½, í•˜ê°• ì‹ í˜¸, ë“±  
+		monster_display();///////ëª¬ìŠ¤í„° ì™¸í˜• 
+		///////////////////////////////////ìºë¦­í„° í˜•ìƒ
 		player_model();
 		map_monster_size[SIZE][character_posy][character_posx]=REMOVE_SIGN;
 		map_monster_size[SIZE][character_posy][character_posx+1]=REMOVE_SIGN;
@@ -3787,20 +3787,20 @@ map_monster_setting();
 ////////////////////////////////////////////////////////	
 ////////////////////////////////////////////////////////	
 		if(kbhit()){
-			//////////////////////////////////¸Å´º ¹Û 
+			//////////////////////////////////ë§¤ë‰´ ë°– 
 			if(character_manu==UNDETECT){			
 				outmanu_key();
 			}
-			//////////////////////////////////////////////////////////¸Å´º 
+			//////////////////////////////////////////////////////////ë§¤ë‰´ 
 			else if(character_manu==DETECT){
 				inmanu_key();			
 			}	
 		}
 		
-/////////////////////////////////////////////////////////////////////Á¡ÇÁ		
+/////////////////////////////////////////////////////////////////////ì í”„		
 		if(character_manu==UNDETECT){
 			player_jump();		
-			////////////////////////////////////Ä³¸¯ÅÍ Çü»ó  
+			////////////////////////////////////ìºë¦­í„° í˜•ìƒ  
 			map_monster_size[SIZE][character_posy][character_posx]=PLAYER;
 			map_monster_size[SIZE][character_posy][character_posx+1]=PLAYER;
 			map_monster_size[SIZE][character_posy-1][character_posx+1]=PLAYER;
@@ -3809,7 +3809,7 @@ map_monster_setting();
 			player_state();
 			information_display();		
 		}
-	}//////ÀüÃ¼ while¹® 		
+	}//////ì „ì²´ whileë¬¸ 		
 }
 
 
