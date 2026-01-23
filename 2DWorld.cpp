@@ -1613,7 +1613,7 @@ void monster_caculate(){
 					if(map_monster_state[FIRE][mapj][mapi]>=100){
 						map_monster_stateTick[FIRE_TICK][mapj][mapi]+=1;
 						if(map_monster_stateTick[FIRE_TICK][mapj][mapi]%62==4){
-						map_monster_health[mapj][mapi]-=1.2*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
+						map_monster_health[mapj][mapi]-=2.4*weapon_damage[FIRE][character_weapon]*map_monster_shield[FIRE][mapj][mapi];
 						map_monster_hit[mapj][mapi]=DETECT;
 						}				
 						else if(map_monster_stateTick[FIRE_TICK][mapj][mapi]>=500){
